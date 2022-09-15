@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DayThree">
         <activity
+            android:name=".views.activities.AddToBasket"
+            android:exported="false" />
+        <activity
             android:name=".views.activities.MainActivity"
             android:exported="true">
             <intent-filter>
