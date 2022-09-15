@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/add_item_shape.xml" value="0.327" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/exclusive_list_item_border.xml" value="0.327" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/ic_search.xml" value="0.327" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/search_box_shape.xml" value="0.327" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout-w600dp/activity_main.xml" value="0.31040564373897706" />
