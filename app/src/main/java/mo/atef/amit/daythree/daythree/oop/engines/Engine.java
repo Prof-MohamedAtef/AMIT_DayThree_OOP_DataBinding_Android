@@ -12,7 +12,7 @@ public class Engine extends Shaping implements listener {
     Polymorphism : overriding/overloading
      */
 
-    public int startEngine(int x, int y, String m, String z){
+    public static int startEngine(int x, int y, String m, String z){
         return 1;
     }
 
