@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="Market"
+            type="mo.atef.amit.daythree.daythree.models.Market" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <ImageView
+                android:src="@{Market.carrotImage}"
+                android:id="@+id/carrotImg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{Market.address}"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/carrotImg"
+                app:layout_constraintStart_toStartOf="@id/carrotImg"
+                app:layout_constraintTop_toBottomOf="@id/carrotImg" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@{Market.locationImage}"
+                app:layout_constraintEnd_toStartOf="@id/tvAddress"
+                app:layout_constraintTop_toTopOf="@id/tvAddress"
+                app:layout_constraintBottom_toBottomOf="@id/tvAddress"
+                android:layout_marginEnd="10dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20dp"
+                app:hintTextAppearance="@android:style/TextAppearance.Small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAddress"
+                android:id="@+id/searchTIL"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/gray"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:hint="@string/searchStore"
+                android:textColorHint="@color/gray"
+                android:textSize="13sp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconMode="clear_text"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editTextSearchBox"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:inputType="textPersonName|textMultiLine"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:gravity="top|left"
+                    android:background="@drawable/search_box_shape"
+                    android:drawableStart="@drawable/ic_search" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/storeImg"
+                android:scaleType="fitXY"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:layout_constraintStart_toStartOf="@id/searchTIL"
+                app:layout_constraintEnd_toEndOf="@id/searchTIL"
+                app:layout_constraintTop_toBottomOf="@+id/searchTIL"
+                android:src="@{Market.sliderImage}" />
+
+            <TextView
+                android:id="@+id/tvExclusive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exclusive_offer"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/storeImg"
+                app:layout_constraintStart_toStartOf="@+id/storeImg"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_all"
+                android:textSize="18sp"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/tvExclusive"
+                app:layout_constraintBottom_toBottomOf="@id/tvExclusive"
+                app:layout_constraintEnd_toEndOf="@id/storeImg" />
+
+            <FrameLayout
+                android:id="@+id/frameItems"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintStart_toStartOf="@id/searchTIL"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvExclusive"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/tvBestSelling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/best_selling"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/frameItems"
+                app:layout_constraintStart_toStartOf="@+id/storeImg"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_all"
+                android:textSize="18sp"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/tvBestSelling"
+                app:layout_constraintBottom_toBottomOf="@id/tvBestSelling"
+                app:layout_constraintEnd_toEndOf="@id/storeImg" />
+
+            <FrameLayout
+                android:id="@+id/frameBest"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:layout_constraintStart_toStartOf="@id/searchTIL"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBestSelling"
+                android:layout_marginTop="20dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

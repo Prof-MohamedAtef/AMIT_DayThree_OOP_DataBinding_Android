@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DayThree</string>
+    <string name="address">Dhaka, Banassre</string>
+    <string name="searchStore">Search Store</string>
+    <string name="exclusive_offer">Exclusive Offer</string>
+    <string name="see_all">See all</string>
+    <string name="best_selling">Best Selling</string>
+</resources>
