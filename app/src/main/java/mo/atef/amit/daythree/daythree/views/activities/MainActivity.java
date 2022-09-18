@@ -3,7 +3,6 @@ package mo.atef.amit.daythree.daythree.views.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,16 +16,19 @@ import android.widget.Toast;
 import mo.atef.amit.daythree.daythree.R;
 import mo.atef.amit.daythree.daythree.databinding.ActivityMainBinding;
 import mo.atef.amit.daythree.daythree.models.Market;
+import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogue;
 
 /*
-Dialogue
 enable AppBarLayout disable ActionBar
-BottomNavigationView
 Drawer Layout and NavigationView
 Overflow icon and menu
+
+BottomNavigationView
+
 Dialogue
 DataTimePicker Dialogue
 FragmentDialogue
+
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -57,7 +59,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.storeImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("Clicke","Clicked ME");
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(android.R.id.content, MyDialogue.newInstance(
+                                getApplicationContext()
+                        ))
+                        .commit();
+            }
+        });
 
+        binding.carrotImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
     }
 
     @Override
