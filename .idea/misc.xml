@@ -16,12 +16,17 @@
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout-w600dp/activty_main.xml" value="0.31040564373897706" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/activity_add_to_basket.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/activity_add_to_basket_ready_app_bar.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.28802083333333334" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/activity_search.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/drawer_header.xml" value="0.18333333333333332" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/exclusive_list_item.xml" value="0.358695652173913" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/fragment_exclusive.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/market_fragment.xml" value="0.28802083333333334" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/my_dialogue.xml" value="0.246875" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/profile_fragment.xml" value="0.28802083333333334" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/settings_fragment.xml" value="0.28802083333333334" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/menu/bottom_nav_menu.xml" value="0.28802083333333334" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/menu/drawer.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/menu/main_menu.xml" value="0.24114583333333334" />
       </map>

@@ -19,8 +19,11 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(this, R.layout.activity_search);
 
+        //getIntent
         Intent intent= getIntent();
         if (intent!=null) {
+
+            //get bundle
             Bundle bundle = intent.getExtras();
             String name = bundle.getString("name");
             Integer age = bundle.getInt("age");

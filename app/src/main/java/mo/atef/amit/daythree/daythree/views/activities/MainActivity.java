@@ -19,11 +19,14 @@ import mo.atef.amit.daythree.daythree.models.Market;
 import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogue;
 
 /*
-enable AppBarLayout disable ActionBar
-Drawer Layout and NavigationView
-Overflow icon and menu
+1.enable AppBarLayout disable ActionBar
+2.Overflow icon and menu
+3.BottomNavigationView
 
-BottomNavigationView
+
+
+
+
 
 Dialogue
 DataTimePicker Dialogue
@@ -48,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
         binding.editTextSearchBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // send explicit intent
                 Intent searchIntent=new Intent(MainActivity.this, SearchActivity.class);
-//                searchIntent.putExtra("name","mohamed atef");
+
+                // send data using bundle
                 Bundle bundle = new Bundle();
                 bundle.putString("name","mohamed atef");
                 bundle.putInt("age",29);
