@@ -11,7 +11,7 @@ import android.view.View;
 import mo.atef.amit.daythree.daythree.R;
 import mo.atef.amit.daythree.daythree.databinding.ActivityAddToBasketBinding;
 
-public class AddToBasket extends AppCompatActivity {
+public class DrawerUseNotAllowed extends AppCompatActivity {
 
     ActivityAddToBasketBinding binding;
 
