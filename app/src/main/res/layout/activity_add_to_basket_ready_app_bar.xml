@@ -21,10 +21,9 @@
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appBar"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="260dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:theme="@style/AppTheme.AppBarOverlay"
-
                 android:background="@drawable/image_background_offwite"
                 app:layout_constraintTop_toTopOf="parent">
 
