@@ -46,6 +46,8 @@ public class ExclusiveOffer extends Fragment {
         binding= DataBindingUtil.inflate(inflater, R.layout.fragment_exclusive,container,false);
 
 //        binding.rvExclusive.setAdapter();
+
+
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 }

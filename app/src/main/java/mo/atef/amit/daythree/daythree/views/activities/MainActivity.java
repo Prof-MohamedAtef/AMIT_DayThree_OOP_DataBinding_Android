@@ -1,5 +1,6 @@
 package mo.atef.amit.daythree.daythree.views.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
@@ -7,7 +8,11 @@ import androidx.databinding.ViewDataBinding;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import mo.atef.amit.daythree.daythree.R;
 import mo.atef.amit.daythree.daythree.databinding.ActivityMainBinding;
@@ -51,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(searchIntent);
             }
         });
+
+
     }
 
     @Override
@@ -81,5 +88,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.e("LifeCycle", "OnDestroy is called!");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Toast.makeText(getApplicationContext(), "Settings is selected!", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.profile:
+                Toast.makeText(getApplicationContext(), "Profile is selected!", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
