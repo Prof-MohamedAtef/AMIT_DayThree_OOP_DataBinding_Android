@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import mo.atef.amit.daythree.daythree.R;
 import mo.atef.amit.daythree.daythree.databinding.ActivityMainBinding;
@@ -21,6 +23,7 @@ Dialogue
 DataTimePicker Dialogue
 FragmentDialogue
  */
+
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
@@ -34,6 +37,20 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getDrawable(R.drawable.location),
                 getResources().getDrawable(R.drawable.image)));
         Log.e("LifeCycle", "OnCreate is called!");
+
+        binding.editTextSearchBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent searchIntent=new Intent(MainActivity.this, SearchActivity.class);
+//                searchIntent.putExtra("name","mohamed atef");
+                Bundle bundle = new Bundle();
+                bundle.putString("name","mohamed atef");
+                bundle.putInt("age",29);
+                bundle.putBoolean("tall",true);
+                searchIntent.putExtras(bundle);
+                startActivity(searchIntent);
+            }
+        });
     }
 
     @Override
