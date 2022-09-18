@@ -4,15 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/add_item_shape.xml" value="0.327" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/arrow_back.xml" value="0.196" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/arrow_back_left_black.xml" value="0.327" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/exclusive_list_item_border.xml" value="0.327" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/ic_drawer.xml" value="0.327" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/ic_search.xml" value="0.327" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/ic_upload.xml" value="0.196" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/image_background_offwite.xml" value="0.2825" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/drawable/search_box_shape.xml" value="0.327" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout-w600dp/activity_main.xml" value="0.31040564373897706" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout-w600dp/activty_main.xml" value="0.31040564373897706" />
-        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/activity_add_to_basket.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/activity_add_to_basket.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/drawer_header.xml" value="0.18333333333333332" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/exclusive_list_item.xml" value="0.358695652173913" />
         <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/layout/fragment_exclusive.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidProjects/amit/DayThree/app/src/main/res/menu/drawer.xml" value="0.33" />
       </map>
     </option>
   </component>

@@ -11,6 +11,16 @@ import mo.atef.amit.daythree.daythree.R;
 import mo.atef.amit.daythree.daythree.databinding.ActivityMainBinding;
 import mo.atef.amit.daythree.daythree.models.Market;
 
+/*
+Dialogue
+enable AppBarLayout disable ActionBar
+BottomNavigationView
+Drawer Layout and NavigationView
+Overflow icon and menu
+Dialogue
+DataTimePicker Dialogue
+FragmentDialogue
+ */
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
