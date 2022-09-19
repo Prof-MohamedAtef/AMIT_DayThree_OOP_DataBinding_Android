@@ -19,16 +19,12 @@ import mo.atef.amit.daythree.daythree.R;
 import mo.atef.amit.daythree.daythree.databinding.ActivityMainBinding;
 import mo.atef.amit.daythree.daythree.models.Market;
 import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogue;
+import mo.atef.amit.daythree.daythree.views.dialogues.StoreDataDialogue;
 
 /*
 1.enable AppBarLayout disable ActionBar
 2.Overflow icon and menu
 3.BottomNavigationView
-
-
-
-
-
 
 Dialogue
 DataTimePicker Dialogue
@@ -71,13 +67,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 displayDialogFragment();
-//                Log.e("Clicke","Clicked ME");
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(android.R.id.content, MyDialogue.newInstance(
-//                                getApplicationContext()
-//                        ))
-//                        .commit();
             }
         });
 
@@ -141,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayDialogFragment() {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        MyDialogue newFragment = new MyDialogue(getApplicationContext(), MainActivity.this);
+        StoreDataDialogue newFragment = new StoreDataDialogue(getApplicationContext(), MainActivity.this);
         isLargeLayout = getResources().getBoolean(R.bool.large_layout);
         if (isLargeLayout) {
             newFragment.show(fragmentManager, "MemberDialog");

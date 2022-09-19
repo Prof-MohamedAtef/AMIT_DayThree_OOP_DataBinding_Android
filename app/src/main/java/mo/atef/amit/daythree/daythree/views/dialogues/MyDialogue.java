@@ -28,7 +28,7 @@ public class MyDialogue extends DialogFragment {
     private final MainActivity mActivity;
     private final Context mContext;
     MyDialogueBinding binding;
-    private MyDialogue addFamilyMemberDialogListener;
+    private MyDialogue myDialogue;
 
     public MyDialogue(Context applicationContext, MainActivity mainActivity) {
         this.mContext=applicationContext;
@@ -36,65 +36,25 @@ public class MyDialogue extends DialogFragment {
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
-        Config.isDialogueRunning=false;
-        Config.ListenerKEY="";
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        Config.isDialogueRunning=false;
-        Config.ListenerKEY="";
-    }
-
-    @Override
-    public void onDismiss(@NonNull DialogInterface dialog) {
-        super.onDismiss(dialog);
-        Config.isDialogueRunning=false;
-        Config.ListenerKEY="";
-    }
-
-
-    @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStyle(DialogFragment.STYLE_NO_TITLE,R.style.RatingDialog2);
-        Config.isDialogueRunning=true;
     }
+
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding= DataBindingUtil.inflate(inflater, R.layout.my_dialogue,container,false);
-
         return binding.getRoot();
     }
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        // The only reason you might override this method when using onCreateView() is
-        // to modify any dialog characteristics. For example, the dialog includes a
-        // title by default, but your custom layout might not need it. So here you can
-        // remove the dialog title, but you must call the superclass to get the Dialog.
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         return dialog;
     }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-//        try {
-//            // Instantiate the NoticeDialogListener so we can send events to the host
-//            addFamilyMemberDialogListener= (MyDialogue) context;
-//        } catch (ClassCastException e) {
-//            // The activity doesn't implement the interface, throw exception
-//            throw new ClassCastException(mActivity.toString()
-//                    + " must implement NoticeDialogListener");
-//        }
-    }
-
 }
