@@ -4,32 +4,28 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
-import mo.atef.amit.daythree.daythree.R;
-import mo.atef.amit.daythree.daythree.databinding.MyDialogueBinding;
-import mo.atef.amit.daythree.daythree.util.Config;
-import mo.atef.amit.daythree.daythree.views.activities.MainActivity;
+public class MyDialogueBuilder extends DialogFragment {
 
-public class MyDialogue extends DialogFragment {
+    OnDialogueBuilderUserResponse dialogueBuilderUserResponse;
+    String location="Al-Fayoum City, Fayoum Governorate, Egypt";
 
-    public static MyDialogue newInstance() {
-        MyDialogue frag = new MyDialogue();
+    public static MyDialogueBuilder newInstance() {
+        MyDialogueBuilder frag = new MyDialogueBuilder();
         return frag;
+    }
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        dialogueBuilderUserResponse= (OnDialogueBuilderUserResponse) context;
     }
 
     @NonNull
@@ -37,20 +33,26 @@ public class MyDialogue extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder alertDialog=new AlertDialog.Builder(getActivity());
         alertDialog.setTitle("Runner Details");
-        alertDialog.setMessage("Enter Your Details ... .... bla bla bla ... ");
+        alertDialog.setMessage(location);
         alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                dialogueBuilderUserResponse.onYesSelected(location);
             }
         });
         alertDialog.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                dialogueBuilderUserResponse.onNoSelected(-1);
             }
         });
         Log.e("onCreateDialogue","Called Me");
         return alertDialog.create();
+    }
+
+
+    public interface OnDialogueBuilderUserResponse{
+        public void onYesSelected(String location);
+        public int onNoSelected(int value);
     }
 }

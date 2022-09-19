@@ -3,9 +3,6 @@ package mo.atef.amit.daythree.daythree.views.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -14,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import mo.atef.amit.daythree.daythree.R;
-import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogue;
 
 public class MarketFragment extends Fragment {
     @Nullable

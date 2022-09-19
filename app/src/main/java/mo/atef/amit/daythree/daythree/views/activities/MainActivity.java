@@ -15,13 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-
 import mo.atef.amit.daythree.daythree.R;
 import mo.atef.amit.daythree.daythree.databinding.ActivityMainBinding;
 import mo.atef.amit.daythree.daythree.models.Market;
-import mo.atef.amit.daythree.daythree.util.Config;
-import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogue;
+import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogueBuilder;
 import mo.atef.amit.daythree.daythree.views.dialogues.StoreDataDialogue;
 
 /*
@@ -35,7 +32,7 @@ FragmentDialogue
 
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyDialogueBuilder.OnDialogueBuilderUserResponse {
 
     ActivityMainBinding binding;
     private boolean isLargeLayout;
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         binding.carrotImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                displayDialogFragment();
             }
         });
     }
@@ -137,29 +134,37 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public void displayDialogFragment() {
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        MyDialogue newFragment = new MyDialogue(getApplicationContext(), MainActivity.this);
-//        isLargeLayout = getResources().getBoolean(R.bool.large_layout);
-//        if (isLargeLayout) {
-//            newFragment.show(fragmentManager, "MemberDialog");
-//            Log.e("fragmentTransaction","true");
-//        } else {
-//            FragmentTransaction transaction = fragmentManager.beginTransaction();
-//            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-//            transaction.add(android.R.id.content, newFragment,"MemberDialog")
-//                    .addToBackStack(null).commit();
-//            Log.e("fragmentTransaction","false");
-//        }
-//    }
+    public void displayDialogFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        StoreDataDialogue newFragment = new StoreDataDialogue(getApplicationContext(), MainActivity.this);
+        isLargeLayout = getResources().getBoolean(R.bool.large_layout);
+        if (isLargeLayout) {
+            newFragment.show(fragmentManager, "MemberDialog");
+            Log.e("fragmentTransaction","true");
+        } else {
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            transaction.add(android.R.id.content, newFragment,"MemberDialog")
+                    .addToBackStack(null).commit();
+            Log.e("fragmentTransaction","false");
+        }
+    }
 
 
     private void showAlertDialog() {
         FragmentManager fm = getSupportFragmentManager();
-        MyDialogue alertDialog = MyDialogue.newInstance();
+        MyDialogueBuilder alertDialog = MyDialogueBuilder.newInstance();
         alertDialog.show(fm, "ready_dialogue");
     }
 
 
+    @Override
+    public void onYesSelected(String location) {
+        binding.tvAddress.setText(location);
+    }
 
+    @Override
+    public int onNoSelected(int value) {
+        return 0;
+    }
 }

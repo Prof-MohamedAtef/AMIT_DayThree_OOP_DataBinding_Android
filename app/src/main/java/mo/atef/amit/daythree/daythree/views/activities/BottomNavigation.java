@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import mo.atef.amit.daythree.daythree.R;
-import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogue;
 import mo.atef.amit.daythree.daythree.views.fragments.MarketFragment;
 import mo.atef.amit.daythree.daythree.views.fragments.ProfileFragment;
 import mo.atef.amit.daythree.daythree.views.fragments.SettingsFragment;

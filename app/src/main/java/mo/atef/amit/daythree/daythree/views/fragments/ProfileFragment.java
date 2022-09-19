@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import mo.atef.amit.daythree.daythree.R;
-import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogue;
 
 public class ProfileFragment extends Fragment {
     @Nullable
