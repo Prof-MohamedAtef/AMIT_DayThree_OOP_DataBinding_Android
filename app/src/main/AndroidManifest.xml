@@ -10,11 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/MaterialCoBridgeTheme">
         <activity
+            android:name=".views.activities.BottomNavigationView"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".views.activities.OverFlowMenuActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".views.activities.AppBarActivty"
             android:exported="false" />
         <activity
             android:name=".views.activities.BottomNavigation"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".views.activities.SearchActivity"
             android:exported="true" />
@@ -26,13 +40,7 @@
             android:exported="true" />
         <activity
             android:name=".views.activities.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
