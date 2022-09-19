@@ -1,11 +1,13 @@
 package mo.atef.amit.daythree.daythree.views.dialogues;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,36 +27,30 @@ import mo.atef.amit.daythree.daythree.views.activities.MainActivity;
 
 public class MyDialogue extends DialogFragment {
 
-    private final MainActivity mActivity;
-    private final Context mContext;
-    MyDialogueBinding binding;
-    private MyDialogue myDialogue;
-
-    public MyDialogue(Context applicationContext, MainActivity mainActivity) {
-        this.mContext=applicationContext;
-        this.mActivity=mainActivity;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NO_TITLE,R.style.RatingDialog2);
-    }
-
-
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        binding= DataBindingUtil.inflate(inflater, R.layout.my_dialogue,container,false);
-        return binding.getRoot();
+    public static MyDialogue newInstance() {
+        MyDialogue frag = new MyDialogue();
+        return frag;
     }
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        Dialog dialog = super.onCreateDialog(savedInstanceState);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        return dialog;
+        AlertDialog.Builder alertDialog=new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle("Runner Details");
+        alertDialog.setMessage("Enter Your Details ... .... bla bla bla ... ");
+        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        alertDialog.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        Log.e("onCreateDialogue","Called Me");
+        return alertDialog.create();
     }
 }

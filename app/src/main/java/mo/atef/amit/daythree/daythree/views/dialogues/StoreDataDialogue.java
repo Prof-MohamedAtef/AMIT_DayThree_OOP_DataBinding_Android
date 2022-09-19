@@ -58,6 +58,7 @@ public class StoreDataDialogue extends DialogFragment {
                 Log.e("StoreDialogue", "Yes");
             }
         });
+
         return binding.getRoot();
     }
 

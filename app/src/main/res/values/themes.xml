@@ -47,4 +47,21 @@
         <item name="android:windowMinWidthMinor">90%</item>
         <item name="android:windowMinWidthMajor">60%</item>
     </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#000000</item>
+        <!-- Used for the background -->
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:windowTitleStyle">@style/TextAppearance_DialogWindowTitle</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/TextAppearance_DialogWindowTitle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/TextAppearance_DialogWindowTitle</item>
+
+    </style>
+
+    <style name="TextAppearance_DialogWindowTitle" parent="@android:style/TextAppearance.Holo.DialogWindowTitle">
+        <item name="android:textColor">@color/teal_200</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

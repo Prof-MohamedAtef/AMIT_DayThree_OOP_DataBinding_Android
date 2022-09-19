@@ -15,9 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+
 import mo.atef.amit.daythree.daythree.R;
 import mo.atef.amit.daythree.daythree.databinding.ActivityMainBinding;
 import mo.atef.amit.daythree.daythree.models.Market;
+import mo.atef.amit.daythree.daythree.util.Config;
 import mo.atef.amit.daythree.daythree.views.dialogues.MyDialogue;
 import mo.atef.amit.daythree.daythree.views.dialogues.StoreDataDialogue;
 
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getDrawable(R.drawable.image)));
         Log.e("LifeCycle", "OnCreate is called!");
 
+
         binding.editTextSearchBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,13 +70,18 @@ public class MainActivity extends AppCompatActivity {
         binding.storeImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                displayDialogFragment();
+                Log.e("StoreImage","Clicked ME!");
+                // used with StoreDataDialogue
+//                displayDialogFragment();
+                // show alert dialog ( not customized - ready dialog )
+                showAlertDialog();
             }
         });
 
         binding.carrotImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
             }
         });
     }
@@ -128,17 +137,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void displayDialogFragment() {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        StoreDataDialogue newFragment = new StoreDataDialogue(getApplicationContext(), MainActivity.this);
-        isLargeLayout = getResources().getBoolean(R.bool.large_layout);
-        if (isLargeLayout) {
-            newFragment.show(fragmentManager, "MemberDialog");
-        } else {
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-            transaction.add(android.R.id.content, newFragment,"MemberDialog")
-                    .addToBackStack(null).commit();
-        }
+//    public void displayDialogFragment() {
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        MyDialogue newFragment = new MyDialogue(getApplicationContext(), MainActivity.this);
+//        isLargeLayout = getResources().getBoolean(R.bool.large_layout);
+//        if (isLargeLayout) {
+//            newFragment.show(fragmentManager, "MemberDialog");
+//            Log.e("fragmentTransaction","true");
+//        } else {
+//            FragmentTransaction transaction = fragmentManager.beginTransaction();
+//            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//            transaction.add(android.R.id.content, newFragment,"MemberDialog")
+//                    .addToBackStack(null).commit();
+//            Log.e("fragmentTransaction","false");
+//        }
+//    }
+
+
+    private void showAlertDialog() {
+        FragmentManager fm = getSupportFragmentManager();
+        MyDialogue alertDialog = MyDialogue.newInstance();
+        alertDialog.show(fm, "ready_dialogue");
     }
+
+
+
 }
