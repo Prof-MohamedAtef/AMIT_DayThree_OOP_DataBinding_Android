@@ -3,6 +3,8 @@ package mo.atef.amit.daythree.daythree.views.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,6 +39,7 @@ FragmentDialogue
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    private boolean isLargeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,13 +70,14 @@ public class MainActivity extends AppCompatActivity {
         binding.storeImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("Clicke","Clicked ME");
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(android.R.id.content, MyDialogue.newInstance(
-                                getApplicationContext()
-                        ))
-                        .commit();
+                displayDialogFragment();
+//                Log.e("Clicke","Clicked ME");
+//                getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .replace(android.R.id.content, MyDialogue.newInstance(
+//                                getApplicationContext()
+//                        ))
+//                        .commit();
             }
         });
 
@@ -132,6 +136,20 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void displayDialogFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        MyDialogue newFragment = new MyDialogue(getApplicationContext(), MainActivity.this);
+        isLargeLayout = getResources().getBoolean(R.bool.large_layout);
+        if (isLargeLayout) {
+            newFragment.show(fragmentManager, "MemberDialog");
+        } else {
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            transaction.add(android.R.id.content, newFragment,"MemberDialog")
+                    .addToBackStack(null).commit();
         }
     }
 }
