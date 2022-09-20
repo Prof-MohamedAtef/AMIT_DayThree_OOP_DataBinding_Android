@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
@@ -42,6 +43,8 @@ public class DateTimePickerActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
+                                Log.e("selectedValue", dayOfMonth+"-"+(monthOfYear+1)+"-"+year);
+                                Log.d("selectedValue", dayOfMonth+"-"+(monthOfYear+1)+"-"+year);
                                 binding.tvDepartringValue.setText(dayOfMonth+"-"+(monthOfYear+1)+"-"+year);
                             }
                         }, mYear, mMonth, mDay);
@@ -60,9 +63,12 @@ public class DateTimePickerActivity extends AppCompatActivity {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker timePicker, int hour, int minute) {
-                                binding.tvReturningDate.setText(hour+":"+minute);
+                                Log.e("selectedValue", hour+":"+minute);
+                                Log.d("selectedValue", hour+":"+minute);
+                                binding.tvReturningValue.setText(hour+":"+minute);
                             }
                         },mHour, mMinute,false );
+                timePickerDialog.show();
             }
         });
     }
