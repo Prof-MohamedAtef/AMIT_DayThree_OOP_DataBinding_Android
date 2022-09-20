@@ -27,8 +27,13 @@ import mo.atef.amit.daythree.daythree.views.dialogues.StoreDataDialogue;
 3.BottomNavigationView
 
 Dialogue
-DataTimePicker Dialogue
 FragmentDialogue
+
+
+
+DataTimePicker Dialogue
+
+
 
  */
 

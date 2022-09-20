@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.activities.DateTimePickerActivity"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/gray2"
+            android:text="Departing Date"
+            android:textStyle="bold"
+            android:id="@+id/tvDepartringDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:text="Sat, 21 Jul 2018"
+            android:textStyle="bold"
+            android:id="@+id/tvDepartringValue"
+            app:layout_constraintStart_toStartOf="@id/tvDepartringDate"
+            app:layout_constraintTop_toBottomOf="@id/tvDepartringDate" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:id="@+id/imgDatePicker"
+            android:src="@drawable/datepicker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvDepartringValue"
+            app:layout_constraintBottom_toBottomOf="@id/tvDepartringValue"
+            android:scaleType="fitXY" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/tvDepartringValue"
+            android:layout_marginTop="10dp" />
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/tvDepartringDate"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/gray2"
+            android:text="Departing Date"
+            android:textStyle="bold"
+            android:id="@+id/tvReturningDate"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:text="Sat, 21 Jul 2018"
+            android:textStyle="bold"
+            android:id="@+id/tvReturningValue"
+            app:layout_constraintStart_toStartOf="@id/tvReturningDate"
+            app:layout_constraintTop_toBottomOf="@id/tvReturningDate" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:id="@+id/imgTimePicker"
+            android:src="@drawable/datepicker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvReturningValue"
+            app:layout_constraintBottom_toBottomOf="@id/tvReturningValue"
+            android:scaleType="fitXY" />
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/tvReturningValue"
+            android:layout_marginTop="10dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
